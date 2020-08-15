@@ -11,9 +11,9 @@ print()
 params = {'q': base_job, 'where': location}
 encoded = urllib.parse.urlencode(params)
 
-URL = f'https://www.monster.com/jobs/search/?{encoded}'
+url = f'https://www.monster.com/jobs/search/?{encoded}'
 
-page = requests.get(URL)
+page = requests.get(url)
 
 soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find(id='SearchResults')
